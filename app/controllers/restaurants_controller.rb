@@ -1,12 +1,17 @@
 class RestaurantsController < ApplicationController
 
     def index
+        render json: Restaurant.all
     end
 
     def show
+        restaurant = find_restaurant
+        render json: restaurant
     end
 
     def create
+        restaurant = Restaurant.create(restaurant_params)
+        render json: restaurant
     end
 
     def update
@@ -18,7 +23,7 @@ class RestaurantsController < ApplicationController
     private
 
     def find_restaurant
-        Bird.find(params[:id])
+        Restaurant.find(params[:id])
     end
     
     def restaurant_params

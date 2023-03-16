@@ -4,9 +4,13 @@ class PizzasController < ApplicationController
     end
 
     def show
+        pizza = find_pizza
+        render json: pizza
     end
 
     def create
+        pizza = Pizza.create(pizza_params)
+        render json: pizza
     end
 
     def update
@@ -18,10 +22,10 @@ class PizzasController < ApplicationController
     private
 
     def find_pizza
-        Bird.find(params[:id])
+        Pizza.find(params[:id])
     end
     
     def pizza_params
-        params.permit(:name, :address)
+        params.permit(:name, :ingredients)
     end
 end
