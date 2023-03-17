@@ -19,6 +19,7 @@ class RestaurantsController < ApplicationController
 
     def destroy
         restaurant = find_restaurant
+        restaurant.restaurant_pizzas.destroy_all
         restaurant.destroy
         head :no_content
     end
