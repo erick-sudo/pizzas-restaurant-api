@@ -1,17 +1,17 @@
 # PIZZAS - RESTAURANTS API
 ******
-<style>
-    table{
-        width: 100%;
-    }
-</style>
 
 Api that associates pizzas with restaurants.
+
+## Technologies
+
+<img src="https://skillicons.dev/icons?i=ruby,sqlite,rails" style="margin: 0 auto; border: solid 1px blue; padding: 1em;" />
+
 
 *****
 ## Entity Relationships Diagram
 <div align="center">
-    <img src="./erd.png" alt="ERD" />
+    <img src="./erd.png" style="width: 100%" alt="ERD" />
 </div>
 
 *****
@@ -72,3 +72,11 @@ Api that associates pizzas with restaurants.
 |                  |DELETE |/restaurants/:id(.:format)       |restaurants#destroy       |
 
 ******
+
+## Author
+[<img src="https://skillicons.dev/icons?i=github" /> Erick Obuya &copy; 2023](https://github.com/erick-sudo)
+## License
+    
+    MIT License Copyright (c) [2023] Erick Obuya. All rights reserved.
+
+**********
