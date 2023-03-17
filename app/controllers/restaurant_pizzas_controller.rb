@@ -1,14 +1,14 @@
 class RestaurantPizzasController < ApplicationController
     def index
-        render json: RestaurantPizza.all, only: [:id, :price, :pizza_id, :restaurant_id]
+        render json: RestaurantPizza.all, only: [:price, :pizza_id, :restaurant_id]
     end
 
     def show
-        render json: find_restaurant_pizza, except: [:created_at, :updated_at]
+        render json: find_restaurant_pizza, except: [:created_at, :updated_at, :id]
     end
 
     def create
-        render json: RestaurantPizza.create!(restaurant_pizza_params), status: :created
+        render json: RestaurantPizza.create!(restaurant_pizza_params).as_json(include: {pizza: { except: [:created_at, :updated_at] } }, only: [])["pizza"], status: :created
     end
 
     def update
